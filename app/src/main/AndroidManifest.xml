@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="apps.codette.geobuy">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:label="@string/title_activity_product_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchResultActivity"
+            android:label="Search Results"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BusinessActivity"
+            android:label="@string/title_activity_business"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CartActivity"
+            android:label="@string/title_activity_kart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SigninActivity"
+            android:label="@string/geobuy"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddressActivity"
+            android:label="@string/title_activity_address"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OrderConfirmationActivity"
+            android:label="@string/title_activity_order_confirmation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:label="@string/title_activity_order_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddressListAcitivty"
+            android:label="@string/title_activity_address_list_acitivty"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- activity declaration -->
+        <!-- activity declaration -->
+
+        <activity
+            android:name=".PayActivity"
+            android:label="@string/title_activity_payment" />
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        /**
+        * Add your API key
+        */
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_Jxn6hzKiRtQjak" />
+
+        <activity
+            android:name=".OrderSuccessActivity"
+            android:label="@string/title_activity_order_success"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".OrderDetailActivity"
+            android:label="@string/title_activity_order_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ImageViewActivity"
+            android:label="@string/title_activity_image_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".SubCategoryActivty"
+            android:label="@string/title_activity_sub_category_activty"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WishListActivity"
+            android:label="@string/title_activity_wish_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FilterActivity"
+            android:label="@string/title_activity_filter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ServiceActivity"
+            android:label="@string/title_activity_service"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".QAActivity"
+            android:label="@string/title_activity_qa"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

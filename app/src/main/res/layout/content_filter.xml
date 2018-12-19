@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="10dp"
+tools:showIn="@layout/activity_filter"
+tools:context=".FilterActivity">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cart_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:layout_below="@+id/amount_ll"
+                android:id="@+id/apply_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/selectedbutton"
+                android:paddingLeft="10dp"
+                android:text="@string/apply"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/scroll_view"
+                android:layout_above="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="12.7dp"
+                    android:text="Filter by Price Range"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="13.3sp" />
+
+                <!--Price Recycelerview-->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/price_rc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="14.3dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginTop="17.3dp"
+                    android:background="#e3e3e3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="23.3dp"
+                    android:text="Go by Brands"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="13.3sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/brand_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                         />
+
+                </LinearLayout>
+
+            </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

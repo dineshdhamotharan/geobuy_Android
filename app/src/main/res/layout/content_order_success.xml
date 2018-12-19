@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OrderSuccessActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:showIn="@layout/activity_order_success">
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/black_overlay"
+            android:text="Delivery by Wed, Jul 11th '18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textStyle="italic"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery Address"
+        />
+
+    <TextView
+        android:textColor="@color/black_overlay"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        />
+    <TextView
+        android:textColor="@color/black_overlay"
+        android:textSize="14sp"
+        android:id="@+id/doorno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address 1"
+        />
+    <TextView
+        android:textColor="@color/black_overlay"
+        android:textSize="14sp"
+        android:id="@+id/street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address 2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/black_overlay"
+            android:textSize="14sp"
+            android:id="@+id/district"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="District" />
+        <TextView
+            android:textColor="@color/black_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=", " />
+
+        <TextView
+            android:textColor="@color/black_overlay"
+            android:id="@+id/state"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State" />
+        <TextView
+            android:textColor="@color/black_overlay"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=", " />
+        <TextView
+            android:textColor="@color/black_overlay"
+            android:id="@+id/pincode"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pincode" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:text="Get detailed delivery updates:"
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/subscribe"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/selected"
+            android:text="Subscribe"
+            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</LinearLayout>

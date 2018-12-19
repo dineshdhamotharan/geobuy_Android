@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OrderConfirmationActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:showIn="@layout/activity_order_confirmation">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cart_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:textStyle="bold"
+                android:layout_below="@+id/amount_ll"
+                android:id="@+id/place_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/selectedbutton"
+                android:paddingLeft="10dp"
+                android:text="Place Order"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/footer"
+            android:fillViewport="true">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                android:id="@+id/address_ll"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Delivery Address"
+                    />
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/delivery_address_ll"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <LinearLayout
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/location_black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="0.4"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="14sp"
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            />
+                        <TextView
+                            android:textSize="14sp"
+                            android:id="@+id/doorno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Address 1"
+                            />
+                        <TextView
+                            android:textSize="14sp"
+                            android:id="@+id/street"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Address 2"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:textSize="14sp"
+                                android:id="@+id/district"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="District" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=", " />
+
+                            <TextView
+                                android:id="@+id/state"
+                                android:textSize="14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="State" />
+                            <TextView
+                                android:textSize="14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=", " />
+                            <TextView
+                                android:id="@+id/pincode"
+                                android:textSize="14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pincode" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/change_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Change"
+                            android:textColor="@color/startblue" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/payment_address_ll"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No address has been added"/>
+
+                    <Button
+                        android:id="@+id/add_address_button"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/selectedbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Add Address"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/store_address_ll"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Store Address"
+                        />
+
+                    <LinearLayout
+
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+                        <LinearLayout
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/location_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="0.4"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:textSize="14sp"
+                                android:id="@+id/store_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Name"
+                                />
+                            <TextView
+                                android:textSize="14sp"
+                                android:id="@+id/store_doorno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Address 1"
+                                />
+                            <TextView
+                                android:textSize="14sp"
+                                android:id="@+id/store_street"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Address 2"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:textSize="14sp"
+                                    android:id="@+id/store_district"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="District" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=", " />
+
+                                <TextView
+                                    android:id="@+id/store_state"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="State" />
+                                <TextView
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=", " />
+                                <TextView
+                                    android:id="@+id/store_pincode"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Pincode" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total amount to be paid"
+                        />
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/rupees" />
+
+                        <TextView
+                            android:id="@+id/total_amount"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="46sp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Payment options"
+                        />
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_weight="0.5"
+                            android:id="@+id/cod"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/black_overlay"
+                            android:background="@drawable/unselected"
+                            android:textAllCaps="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cash on delivery"
+                            />
+
+                        <Button
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="0.5"
+                            android:id="@+id/takeaway"
+                            android:textColor="@color/black_overlay"
+                            android:background="@drawable/unselected"
+                            android:textAllCaps="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Store pickup"
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/paytm"
+                        android:textColor="@color/black_overlay"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/unselected"
+                        android:textAllCaps="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pay now"
+                        />
+
+
+
+                    <!--<Button
+                        android:textColor="@color/black_overlay"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/unselected"
+                        android:textAllCaps="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Take Away"
+                        />
+        -->
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

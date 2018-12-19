@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "37033476944",
+    "firebase_url": "https://geobuy-7a1fa.firebaseio.com",
+    "project_id": "geobuy-7a1fa",
+    "storage_bucket": "geobuy-7a1fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37033476944:android:088d3fcb6607edc8",
+        "android_client_info": {
+          "package_name": "apps.codette.geobuy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37033476944-mdodoa32lgm3r8v0pfh4uc7eabfkd6gu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "apps.codette.geobuy",
+            "certificate_hash": "a81bab1717d5d559972800fa6fa4553304d7081e"
+          }
+        },
+        {
+          "client_id": "37033476944-ibtm56o94brua82sodrv55s9ll86tb0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdvpwPj_c6l1nDZLzCSa3WUlApz1IZkRE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37033476944-ibtm56o94brua82sodrv55s9ll86tb0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

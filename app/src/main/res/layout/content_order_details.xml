@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OrderDetailsActivity"
+    tools:showIn="@layout/activity_order_details"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/order_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:id="@+id/empty_ll"
+            android:visibility="gone"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/empty_cart"
+                android:layout_width="184dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:foregroundGravity="center"
+                android:src="@drawable/empty_cart"
+                tools:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/no_prod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="No Orders"
+                android:textColor="@color/black_overlay"
+                android:textSize="22sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
