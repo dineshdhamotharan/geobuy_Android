@@ -20,18 +20,22 @@ import com.loopj.android.http.RequestParams;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 import apps.codette.forms.NotificationForm;
 import apps.codette.forms.Product;
 import apps.codette.geobuy.adapters.NotoficationsAdapter;
 import apps.codette.geobuy.adapters.WishlistProductsAdapter;
 import apps.codette.utils.RestCall;
+import apps.codette.utils.SessionManager;
 import cz.msebera.android.httpclient.Header;
 
 public class NotificationActivity extends AppCompatActivity {
     ProgressDialog pd;
 
     LinearLayout notification_ll, empty_ll;
+    SessionManager sessionManager;
+    Map<String, ?> userDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,8 @@ public class NotificationActivity extends AppCompatActivity {
         pd.setMessage("Loading");
         notification_ll = findViewById(R.id.notification_ll);
         empty_ll = findViewById(R.id.empty_ll);
+        sessionManager = new SessionManager(this);
+        userDetails = sessionManager.getUserDetails();
         getAllNotifications();
 
     }
@@ -63,7 +69,7 @@ public class NotificationActivity extends AppCompatActivity {
     private void getAllNotifications() {
         pd.show();
         RequestParams requestParams = new RequestParams();
-
+        requestParams.put("useremail", userDetails.get("useremail"));
         RestCall.get("notifications", requestParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {

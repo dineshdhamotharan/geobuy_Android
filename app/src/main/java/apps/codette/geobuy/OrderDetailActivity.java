@@ -44,6 +44,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import apps.codette.forms.Address;
 import apps.codette.forms.Order;
@@ -54,6 +55,7 @@ import apps.codette.forms.Shipping;
 import apps.codette.geobuy.adapters.OrderProductsAdapter;
 import apps.codette.geobuy.adapters.TimeLineviewAdapter;
 import apps.codette.utils.RestCall;
+import apps.codette.utils.SessionManager;
 import cz.msebera.android.httpclient.Header;
 
 public class OrderDetailActivity extends AppCompatActivity implements PaymentResultListener {
@@ -78,7 +80,9 @@ public class OrderDetailActivity extends AppCompatActivity implements PaymentRes
 
     Order order;
 
+    SessionManager sessionManager;
 
+    Map<String, ?> userDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +107,8 @@ public class OrderDetailActivity extends AppCompatActivity implements PaymentRes
         pd.setMessage("Loading");
         bundle = getIntent();
         getOrderDetails(bundle.getStringExtra("id"));
-
+        sessionManager = new SessionManager(this);
+        userDetails = sessionManager.getUserDetails();
     }
 
 
@@ -196,6 +201,10 @@ public class OrderDetailActivity extends AppCompatActivity implements PaymentRes
         return super.onOptionsItemSelected(item);
     }
 
+    public void closeActivity(){
+        this.finish();
+    }
+
     @Override
     public void onPaymentSuccess(String paymentId) {
         updatePayment(paymentId);
@@ -203,17 +212,20 @@ public class OrderDetailActivity extends AppCompatActivity implements PaymentRes
 
     private void updatePayment(String paymentId) {
         pd.show();
+        String useremail = (String) userDetails.get("useremail");
         RequestParams requestParams = new RequestParams();
         requestParams.put("paymentstatus", "PAID");
         requestParams.put("paymentmode", "RAZORPAY");
         requestParams.put("paymentId", paymentId);
+        requestParams.put("useremail", useremail);
         requestParams.put("message", "Order amount of Rs."+order.getTotalamount()+" has been paid, Txn Id : "+paymentId);
         String url ="payment/"+order.getOrderNo()+"/"+order.getId()+"/update";
         RestCall.post(url, requestParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                getOrderDetails(order.getId());
+               // getOrderDetails(order.getId());
                 pd.dismiss();
+                closeActivity();
             }
 
             @Override
@@ -226,7 +238,7 @@ public class OrderDetailActivity extends AppCompatActivity implements PaymentRes
 
     @Override
     public void onPaymentError(int i, String s) {
-
+        toast("Payment Error ");
     }
 
 

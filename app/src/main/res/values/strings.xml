@@ -171,7 +171,7 @@
     <string name="title_activity_wish_list">Wishlist</string>
     <string name="title_activity_filter">Filters</string>
     <string name="apply">Apply</string>
-
+    <string name="no_notifications">No notifications yet</string>
     <string name="title_activity_welcome">Geobuy</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

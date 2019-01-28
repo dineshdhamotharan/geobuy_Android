@@ -43,30 +43,29 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService  {
 
     @SuppressLint("WrongConstant")
     private void sendMyNotification(RemoteMessage.Notification notification) {
-        Log.i("msg", notification.getBody());
-        Intent myIntent = new Intent(this, NotificationActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                this,
-                0,
-                myIntent,
-                Intent.FLAG_ACTIVITY_NEW_TASK);
+        if(notification != null) {
+            Log.i("msg", notification.getBody());
+            Intent myIntent = new Intent(this, NotificationActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(
+                    this,
+                    0,
+                    myIntent,
+                    Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        myNotification = new NotificationCompat.Builder(this)
-                .setContentTitle(notification.getTitle())
-                .setContentText(notification.getBody())
-                .setTicker(notification.getTitle())
-                .setWhen(System.currentTimeMillis())
-                .setContentIntent(pendingIntent)
-                .setDefaults(Notification.DEFAULT_SOUND)
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.logo)
-                .build();
+            myNotification = new NotificationCompat.Builder(this)
+                    .setContentTitle(notification.getTitle())
+                    .setContentText(notification.getBody())
+                    .setTicker(notification.getTitle())
+                    .setWhen(System.currentTimeMillis())
+                    .setContentIntent(pendingIntent)
+                    .setDefaults(Notification.DEFAULT_SOUND)
+                    .setAutoCancel(true)
+                    .setSmallIcon(R.drawable.logo)
+                    .build();
 
-        notificationManager =
-                (NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(MY_NOTIFICATION_ID, myNotification);
-
-
-
+            notificationManager =
+                    (NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(MY_NOTIFICATION_ID, myNotification);
+        }
     }
 }

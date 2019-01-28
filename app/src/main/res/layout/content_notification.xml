@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="No items in wishlist"
+            android:text="@string/no_notifications"
             android:textColor="@color/black_overlay"
             android:textSize="22sp"
             />
